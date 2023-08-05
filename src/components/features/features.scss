@@ -1,0 +1,44 @@
+
+
+@use "../../styles/variables" as v;
+
+.features{
+    background-color: v.$color1_5;
+    padding: 2rem;
+    @media screen and (max-width: 768px) {
+        gap: 1rem;
+    }
+    .feature-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 5px 10px  rgba(0, 0, 0, 0.036);
+        border-radius: 15px;
+        background-color: v.$color4;
+        
+
+        .fb_item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+    
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    
+        h3{
+            font-size: 1rem;
+            font-weight: 200;
+            text-transform: uppercase;
+            color: v.$color1;
+            margin-top: 2rem;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@use "../../styles/variables" as v;
+
+.prod-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 1rem;
+    @media (max-width:768px){
+        flex-direction: column;
+    }
+
+    .products{
+        @media (max-width:768px){
+            width: 100%;
+        }
+    }
+
+    .show-more-box{
+        @media (max-width:768px){
+            width: 100%;
+        }
+    }
+
+    .show-more{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        svg{
+            font-size: 4rem;
+            color: v.$color1_4;
+        }
+    }
+  }

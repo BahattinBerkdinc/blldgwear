@@ -1,0 +1,43 @@
+/* BOOTSTRAP */
+.feature-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 0 1rem;
+  text-align: justify;
+}
+.feature-details .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.feature-details .row:nth-child(2) {
+  align-self: flex-end;
+}
+.feature-details .row:nth-child(2) h2 {
+  text-align: end;
+}
+.feature-details .row:nth-child(2) .fb-content {
+  flex-direction: row-reverse;
+  margin-left: auto;
+}
+.feature-details .row h2 {
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #FF971D;
+}
+.feature-details .fb-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 50%;
+}
+.feature-details .fb-content img {
+  width: 150px;
+  object-fit: cover;
+}
+.feature-details .fb-content p {
+  font-size: 0.9rem;
+  font-weight: 200;
+}/*# sourceMappingURL=featuredetails.css.map */

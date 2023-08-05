@@ -1,0 +1,224 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Black Logo T-shirt",
+        "price": 39.99,
+        "stock": 50,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/428340/pexels-photo-428340.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.1,
+        "rate": 4,
+        "totalRate":241
+      },
+      {
+        "id": 2,
+        "name": "Black T-shirt",
+        "price": 49.99,
+        "stock": 30,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1129019/pexels-photo-1129019.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.05,
+        "rate": 3,
+        "totalRate":98
+      },
+      {
+        "id": 3,
+        "name": "Eat Right T-shirt",
+        "price": 29.99,
+        "stock": 70,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1566412/pexels-photo-1566412.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.08,
+        "rate": 5,
+        "totalRate":78
+      },
+      {
+        "id": 4,
+        "name": "Burn Your Problem T-shirt",
+        "price": 34.99,
+        "stock": 20,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1311590/pexels-photo-1311590.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.1,
+        "rate": 5,
+        "totalRate":45
+      },
+      {
+        "id": 5,
+        "name": "CA T-shirt",
+        "price": 47.99,
+        "stock": 27,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/428311/pexels-photo-428311.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.03,
+        "rate": 4,
+        "totalRate":352
+      },
+      {
+        "id": 6,
+        "name": "A Symbol T-shirt",
+        "price": 51.99,
+        "stock": 10,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1861907/pexels-photo-1861907.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.06,
+        "rate": 5,
+        "totalRate":66
+      },
+      {
+        "id": 7,
+        "name": "PAC-MAN T-shirt",
+        "price": 42.99,
+        "stock": 26,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/2560894/pexels-photo-2560894.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.1,
+        "rate": 4,
+        "totalRate":25
+      },
+      {
+        "id": 8,
+        "name": "Colorful  T-shirt",
+        "price": 32.99,
+        "stock": 35,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1484808/pexels-photo-1484808.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.1,
+        "rate": 1,
+        "totalRate":54
+      },
+      {
+        "id": 9,
+        "name": "Spartan T-shirt",
+        "price": 28.99,
+        "stock": 40,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/806627/pexels-photo-806627.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.07,
+        "rate": 2,
+        "totalRate":75
+      },
+      {
+        "id": 10,
+        "name": "Mountain Adventure T-shirt",
+        "price": 37.99,
+        "stock": 15,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/3053824/pexels-photo-3053824.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.04,
+        "rate": 4,
+        "totalRate":44
+      },
+      {
+        "id": 11,
+        "name": "SRLY  T-shirt",
+        "price": 44.99,
+        "stock": 60,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/2315313/pexels-photo-2315313.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.09,
+        "rate": 3,
+        "totalRate":32
+      },
+      {
+        "id": 12,
+        "name": "Vintage Floral T-shirt",
+        "price": 26.99,
+        "stock": 18,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1983925/pexels-photo-1983925.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.1,
+        "rate": 2,
+        "totalRate":144
+      },
+      {
+        "id": 13,
+        "name": "BigMan Design T-shirt",
+        "price": 33.99,
+        "stock": 25,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1868566/pexels-photo-1868566.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.02,
+        "rate": 5,
+        "totalRate":96
+      },
+      {
+        "id": 14,
+        "name": "Nirvana Lifestyle T-shirt",
+        "price": 38.99,
+        "stock": 29,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1933589/pexels-photo-1933589.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.05,
+        "rate": 4,
+        "totalRate":88
+      },
+      {
+        "id": 15,
+        "name": "Summer Vibes T-shirt",
+        "price": 31.99,
+        "stock": 22,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/837443/pexels-photo-837443.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.08,
+        "rate": 2,
+        "totalRate":25
+      },
+      {
+        "id": 16,
+        "name": "Vintage King T-shirt",
+        "price": 29.99,
+        "stock": 33,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/3026284/pexels-photo-3026284.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.06,
+        "rate": 1,
+        "totalRate":45
+      },
+      {
+        "id": 17,
+        "name": "Y T-shirt",
+        "price": 36.99,
+        "stock": 19,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/5159242/pexels-photo-5159242.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.1,
+        "rate": 4,
+        "totalRate":77
+      },
+      {
+        "id": 18,
+        "name": "Retro Bourne T-shirt",
+        "price": 39.99,
+        "stock": 17,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/11805488/pexels-photo-11805488.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.04,
+        "rate": 2,
+        "totalRate":55
+      },
+      {
+        "id": 19,
+        "name": "Adventure Awaits T-shirt",
+        "price": 28.99,
+        "stock": 42,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1670923/pexels-photo-1670923.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.1,
+        "rate": 3,
+        "totalRate":569
+      },
+      {
+        "id": 20,
+        "name": "KNY Vinyl T-shirt",
+        "price": 45.99,
+        "stock": 11,
+        "sizes": ["S", "M", "L", "XL"],
+        "image": "https://images.pexels.com/photos/1432379/pexels-photo-1432379.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "discountRate": 0.03,
+        "rate": 5,
+        "totalRate":128
+      }
+    ]
+  }

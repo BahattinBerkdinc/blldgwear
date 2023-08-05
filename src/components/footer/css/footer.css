@@ -1,0 +1,8 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+.footer .col img {
+  width: 150px;
+}/*# sourceMappingURL=footer.css.map */

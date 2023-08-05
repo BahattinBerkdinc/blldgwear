@@ -1,0 +1,15 @@
+
+
+.product-card{
+    .card-star{
+        span{
+            font-size: .9rem;
+            margin-left: .7rem;
+            font-weight: 200;
+            color: rgb(156, 149, 149);
+        }
+    }
+    .card-text{
+        white-space: nowrap;
+    }
+}

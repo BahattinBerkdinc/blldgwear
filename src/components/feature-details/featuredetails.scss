@@ -1,0 +1,50 @@
+@use "../../styles/variables" as v;
+
+.feature-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 0 1rem;
+    text-align: justify;
+
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:nth-child(2){
+            align-self: flex-end;
+            h2{
+                text-align: end;
+            }
+
+            .fb-content{
+                flex-direction: row-reverse;
+                margin-left: auto;
+            }
+        }
+
+        h2{
+            font-weight: 200;
+            text-transform: uppercase;
+            color: v.$color1;
+        }
+    }
+
+    .fb-content{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 50%;
+
+        img{
+            width: 150px;
+            object-fit: cover;
+        }
+
+        p{
+            font-size: .9rem;
+            font-weight: 200;
+        }
+    }
+}

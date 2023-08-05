@@ -36,7 +36,10 @@
         align-items: center;
         gap: 1rem;
         width: 50%;
-
+        @media (max-width:768px){
+            width: 100%;
+            
+        }
         img{
             width: 150px;
             object-fit: cover;

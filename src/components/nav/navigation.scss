@@ -1,0 +1,11 @@
+@use "../../styles/variables" as v;
+
+.nav-item{
+
+    a{
+       color: v.$color1;
+       font-size: 1.2rem;
+
+       font-weight: 200;
+    }
+}

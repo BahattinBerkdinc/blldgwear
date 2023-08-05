@@ -33,6 +33,11 @@
   gap: 1rem;
   width: 50%;
 }
+@media (max-width: 768px) {
+  .feature-details .fb-content {
+    width: 100%;
+  }
+}
 .feature-details .fb-content img {
   width: 150px;
   object-fit: cover;

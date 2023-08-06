@@ -1,4 +1,4 @@
-
+@use "../../styles/variables" as v;
 
 .navbar{
     background-color: #FFFF;
@@ -16,8 +16,33 @@
 
 
         img{
-            width: 200px;
+            width: 150px;
             object-fit: cover;
         }
     }
+    .cart{
+        position: relative;
+        cursor: pointer;
+        
+        .header-cart{
+            margin-left: 4rem;
+            color: v.$color1;
+            font-size: 2rem;   
+        }
+
+        .amount{
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .7rem;}
+    }
 }
+

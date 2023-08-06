@@ -1,13 +1,17 @@
 .footer{
     text-align: center;
-    padding: 2rem;
-    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.157);
 
     >.row{
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
     }
   img{
     width: 200px;
+  }
+
+  span{
+    font-weight: 200;
+    color: gray;
+    margin: 1rem;
   }
 }

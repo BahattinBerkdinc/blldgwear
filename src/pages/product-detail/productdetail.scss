@@ -1,0 +1,84 @@
+
+@use "../../styles/variables" as v;
+
+.product-detail{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media (max-width:768px){
+        text-align: center;
+
+        .sizes{
+            margin: 0 auto;
+        }
+    }
+}
+
+.product-image{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 500px;
+    max-height: 500px;
+    align-self: flex-end;
+    overflow: hidden;
+    img{
+        max-width: 100%;
+        object-fit: cover;
+    }
+}
+
+.product-detail-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+
+    h4{
+        font-weight: 200;
+        span{
+            font-size: .9rem;
+        }
+    }
+
+    .sizes{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .5rem;
+
+        >span{
+            border: 1px solid grey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: all 500ms ease;
+            border-radius: 10px;
+
+            &:hover{
+                background-color: v.$color1;
+                color: white;
+                border: none;
+            }
+        }
+    }
+
+    .stock{
+        font-size: .8rem;
+        font-weight: 200;
+        letter-spacing: 1.4px;
+    }
+
+    .go-back{
+        display: flex;
+        align-items: center;
+        gap: .7rem;
+        color: v.$color1;
+        font-size: .8rem;
+        cursor: pointer;
+    }
+}

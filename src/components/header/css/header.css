@@ -1,3 +1,4 @@
+/* BOOTSTRAP */
 .navbar {
   background-color: white;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.053);
@@ -14,6 +15,29 @@
   }
 }
 .navbar .container img {
-  width: 200px;
+  width: 150px;
   object-fit: cover;
+}
+.navbar .cart {
+  position: relative;
+  cursor: pointer;
+}
+.navbar .cart .header-cart {
+  margin-left: 4rem;
+  color: #FF971D;
+  font-size: 2rem;
+}
+.navbar .cart .amount {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
 }/*# sourceMappingURL=header.css.map */

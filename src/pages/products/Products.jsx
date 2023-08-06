@@ -3,11 +3,12 @@ import ProductCard from "../../components/product-card/ProductCard"
 import data from '../../data/data.json'
 import "./products.scss"
 import Spacer from "../../components/spacer/Spacer"
+import { Link } from "react-router-dom"
 
 
 const Products = () => {
 
-
+ 
   return (
     <>
     <Spacer/>
@@ -16,7 +17,7 @@ const Products = () => {
       <Row>
         {
           data.products.map((item) => (
-            <Col className="gy-3" md={4} lg={3}    key={item.id}>   
+            <Col className="gy-3 text-decoration-none" md={4} lg={3}    key={item.id}>   
             <ProductCard item={item} />
             </Col>
           ))

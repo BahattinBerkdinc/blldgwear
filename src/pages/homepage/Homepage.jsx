@@ -22,7 +22,6 @@ const Homepage = () => {
       <Spacer/>
     <FeatureDetails/>
     </Container>
-
     </div>
   )
 }

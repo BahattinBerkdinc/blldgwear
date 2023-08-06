@@ -4,9 +4,13 @@ import data from "../../data/data.json"
 import { Card, Col, Row } from 'react-bootstrap'
 import {BsChevronDoubleRight} from 'react-icons/bs'
 import "./homeproducts.scss"
+import { useNavigate } from 'react-router-dom'
 const HomeProducts = () => {
+
+  const navigate = useNavigate()
+  
   return (
-    <Row> 
+    <Row > 
       <h1>ürünlerimiz</h1>
       <div className="prod-content">
       {
@@ -16,7 +20,7 @@ const HomeProducts = () => {
     </Col>
   ))
     }
-    <Card className='show-more-box h-100'>
+    <Card className='show-more-box h-100' onClick={()=>navigate("/product")}>
       <Card.Body className='show-more'>
         <BsChevronDoubleRight/>
       </Card.Body>

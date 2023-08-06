@@ -2,10 +2,20 @@ import { Button, Card, Col } from 'react-bootstrap'
 
 import {AiOutlineShoppingCart, AiOutlineStar} from "react-icons/ai"
 import "./productcard.scss"
+import { useNavigate } from 'react-router-dom'
+import { addToCart } from '../../store/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
 const ProductCard = ({item}) => {
-
+const navigate = useNavigate()
   const {name,image,price,size,rate,totalRate} = item;
+const {cart} = useSelector((state) => state.cart);
+const dispatch = useDispatch();
+
+  const addCart = (item) => {
+    dispatch(addToCart(item));
+  }
+  
 
   return (
     
@@ -26,8 +36,10 @@ const ProductCard = ({item}) => {
               <Card.Subtitle>{price} TL</Card.Subtitle>
           </Card.Body>
           <Card.Footer className='d-flex justify-content-center gap-2'>
-          <Button className='text-white w-100 justify-content-center'>Detayları Gör </Button>
-              <Button className='text-white w-100 justify-content-center'>Hemen Al <AiOutlineShoppingCart/></Button>
+          <Button className='text-white w-100 justify-content-center'  onClick={()=>navigate(`/product/${item.id}`)} >Detayları Gör </Button>
+              <Button className='text-white w-100 justify-content-center'
+              onClick={()=>addCart(item)}
+              >Sepete Ekle <AiOutlineShoppingCart/></Button>
           </Card.Footer>
       </Card>
   )

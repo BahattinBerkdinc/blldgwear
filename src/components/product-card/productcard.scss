@@ -1,6 +1,7 @@
 
 
 .product-card{
+    cursor: pointer;
     .card-star{
         span{
             font-size: .9rem;
@@ -11,5 +12,11 @@
     }
     .card-text{
         white-space: nowrap;
+    }
+
+    .card-footer{
+        @media(max-width:1400px){
+            flex-direction: column;
+        }
     }
 }

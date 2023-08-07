@@ -4,6 +4,7 @@ import { AiFillDelete, AiOutlineRollback } from 'react-icons/ai';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart,resetCart } from '../../store/cartSlice';
+import { setSize } from '../../store/sizeSlice';
 import Spacer from '../spacer/Spacer';
 
 
@@ -17,10 +18,12 @@ const CartTablo = () => {
 
     const removeItem = (id) => {
       dispatch(removeFromCart(id));
+      dispatch(setSize(''));
     }
 
     const removeCart = () => {
       dispatch(resetCart());
+      dispatch(setSize(''));
     }
     
 
@@ -54,8 +57,7 @@ const CartTablo = () => {
             <tr key={i}>
               <td>{i+1}</td>
               <td>{item.name}</td>
-              <td>{item.size}
-              </td>
+              <td>{!item.size ? "beden secilmedi" : item.size}</td>
               <td>{item.price}</td>
               <td style={{cursor:"pointer"}} className="text-center">
                 <AiFillDelete className='text-danger'

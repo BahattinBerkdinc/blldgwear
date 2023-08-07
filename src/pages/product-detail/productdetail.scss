@@ -64,6 +64,10 @@
                 color: white;
                 border: none;
             }
+
+            &.selected{
+                background-color: v.$color1;
+            }
         }
     }
 
@@ -83,4 +87,10 @@
     color: v.$color1;
     font-size: .8rem;
     cursor: pointer;
+}
+
+.detail-buttons{
+    @media (max-width:768px){
+        justify-content: center;
+    }
 }

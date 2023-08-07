@@ -13,19 +13,12 @@ const Header = () => {
  const navigate = useNavigate()
 
   return (
-   <>
-    {/* <Navbar fixed='top' className='navbar p-0 border'>
-          <Container className='header'> 
-           
-           
-           
-           </Container>
-      </Navbar> */}
+  
 
 <Navbar expand="lg" className="navbar">
 <Container>
   <Navbar.Brand href="#home">
-  <img src={logo} alt="" />
+  <img  src={logo} alt="" onClick={()=> navigate('/')} />
   </Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -41,7 +34,7 @@ const Header = () => {
           
 </Navbar>
 
-   </>
+   
   )
 }
 

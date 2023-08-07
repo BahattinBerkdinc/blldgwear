@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import data from '../../data/data.json';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
 import Spacer from '../../components/spacer/Spacer';
 import { AiOutlineRollback, AiOutlineStar } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSize } from '../../store/sizeSlice';
 import { addToCart } from '../../store/cartSlice';
+import ModalBox from "../../components/modal/Modal";
 import './productdetail.scss';
 
 const ProductDetail = () => {
+
+  const [showModal, setShowModal] = useState(false);
+
   const navigate = useNavigate();
   const { id } = useParams();
 
   const product = data.products.find((item) => item.id == id);
 
-  const {cart} = useSelector((state) => state.cart);
   const {size} = useSelector((state) => state.size);
   const dispatch = useDispatch();
   
@@ -23,18 +26,17 @@ const ProductDetail = () => {
   const handleSize = (size) => {
     dispatch(setSize(size));
   }
-
-  // console.log(size);
   
-
   const handleAddToCart = () => {
-
-    console.log(size);
-
-
-    const updatedProduct = { ...product, size: size };
-    dispatch(addToCart(updatedProduct));
-    navigate("/cart")
+    if(size==""){
+      setShowModal(true);
+    }else{
+      const updatedProduct = { ...product, size: size };
+      dispatch(addToCart(updatedProduct));
+      dispatch(setSize(''));
+    }
+    
+   
   }
   
   return (
@@ -48,7 +50,12 @@ const ProductDetail = () => {
             </div>
           </Col>
           <Col md={6} className="">
-            <div className="product-detail-content">
+            {
+              showModal ? (
+                <ModalBox setShowModal={setShowModal}/>
+              ) : (
+                <>
+                <div className="product-detail-content">
               <span onClick={() => navigate(-1)} className="go-back">
                 <AiOutlineRollback /> Geri Dön
               </span>
@@ -69,7 +76,8 @@ const ProductDetail = () => {
                 </h4>
               </div>
               <h5>{product.price} TL</h5>
-              <div className="sizes">
+            
+                  <div className="sizes">
                 {product.sizes.map((size) => (
                   <span key={size}
                   onClick={() => handleSize(size)}
@@ -78,14 +86,22 @@ const ProductDetail = () => {
                   </span>
                 ))}
               </div>
+            
               <span className="stock">Stok: {product.stock}</span>
             </div>
-            <Button
+           <div className='d-flex gap-2 d-flex detail-buttons'>
+           <Button
               className="text-white mt-5"
               onClick={handleAddToCart}
-            >
-              Sepete Ekle
-            </Button>
+            > Sepete Ekle</Button>
+            <Button
+              className="text-white mt-5"
+              onClick={()=> navigate("/cart")}
+            > Sepete Git</Button>
+           </div>
+           </>
+              )
+            }
           </Col>
         </Row>
       </Container>

@@ -5,7 +5,8 @@ import "./footer.scss"
 
 const Footer = () => {
   return (
-   <Container className='footer'>
+   <footer className='footer'>
+    <Container>
     <Row>
       <Col sm={12} className='d-flex justify-content-center'>
       <img  src={logo} alt="" />
@@ -22,6 +23,7 @@ const Footer = () => {
       </Col>
     </Row>
    </Container>
+   </footer>
   )
 }
 

@@ -9,7 +9,6 @@ import FeatureDetails from '../../components/feature-details/FeatureDetails'
 const Homepage = () => {
   return (
     <div className='homepage'>
-      <Spacer/>
       <Slider/>
       <Spacer/>
     <Container className='home-page-prods'>

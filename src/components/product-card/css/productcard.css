@@ -1,0 +1,18 @@
+.product-card {
+  cursor: pointer;
+  text-decoration: none;
+}
+.product-card .card-star span {
+  font-size: 0.9rem;
+  margin-left: 0.7rem;
+  font-weight: 200;
+  color: rgb(156, 149, 149);
+}
+.product-card .card-text {
+  white-space: nowrap;
+}
+@media (max-width: 1400px) {
+  .product-card .card-footer {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=productcard.css.map */

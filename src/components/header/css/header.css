@@ -2,6 +2,7 @@
 .navbar {
   background-color: white;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.053);
+  position: relative;
 }
 .navbar .container {
   display: flex;
@@ -18,9 +19,28 @@
   width: 150px;
   object-fit: cover;
 }
+@media (max-width: 994px) {
+  .navbar .navbar-toggler {
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    border: none;
+    outline: red;
+  }
+}
+.navbar .navbar-nav {
+  text-align: center;
+}
 .navbar .cart {
   position: relative;
   cursor: pointer;
+}
+@media (max-width: 994px) {
+  .navbar .cart {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+  }
 }
 .navbar .cart .header-cart {
   margin-left: 4rem;

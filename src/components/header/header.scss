@@ -3,6 +3,7 @@
 .navbar{
     background-color: #FFFF;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.053);
+    position: relative;
 
     .container{
         display: flex;
@@ -20,9 +21,30 @@
             object-fit: cover;
         }
     }
+
+    .navbar-toggler{
+        @media (max-width:994px){
+            position: absolute;
+            top: 3rem;
+            left: 2rem;
+            border: none;
+            outline: red;
+        }
+    }
+
+    .navbar-nav{
+        text-align: center;
+    }
+
     .cart{
         position: relative;
         cursor: pointer;
+
+        @media (max-width:994px){
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+        }
         
         .header-cart{
             margin-left: 4rem;

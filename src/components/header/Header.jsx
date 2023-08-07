@@ -1,5 +1,5 @@
 
-import { Container, Navbar } from 'react-bootstrap'
+import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
 import logo from "../../images/blldg_logo.png"
 import './header.scss'
 import Navigation from '../nav/Navigation'
@@ -13,18 +13,35 @@ const Header = () => {
  const navigate = useNavigate()
 
   return (
-    <Navbar fixed='top' className='navbar p-0 border'>
+   <>
+    {/* <Navbar fixed='top' className='navbar p-0 border'>
           <Container className='header'> 
-           <img src={logo} alt="" />
-           <Navigation/>
-           <div className="cart"
+           
+           
+           
+           </Container>
+      </Navbar> */}
+
+<Navbar expand="lg" className="navbar">
+<Container>
+  <Navbar.Brand href="#home">
+  <img src={logo} alt="" />
+  </Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+  <Navbar.Collapse id="basic-navbar-nav">
+    <Navigation/>
+  </Navbar.Collapse>
+  <div className="cart"
            onClick={()=> navigate('/cart')}
            >
            <AiOutlineShoppingCart className='header-cart'/>
            <span className="amount">{cart.length}</span>
            </div>
-           </Container>
-      </Navbar>
+</Container>
+          
+</Navbar>
+
+   </>
   )
 }
 

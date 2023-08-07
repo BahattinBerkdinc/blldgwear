@@ -28,6 +28,10 @@ const ProductDetail = () => {
   
 
   const handleAddToCart = () => {
+
+    console.log(size);
+
+
     const updatedProduct = { ...product, size: size };
     dispatch(addToCart(updatedProduct));
     navigate("/cart")

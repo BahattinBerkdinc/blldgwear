@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Container, Table } from 'react-bootstrap';
 import { AiFillDelete, AiOutlineRollback } from 'react-icons/ai';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeFromCart } from '../../store/cartSlice';
+import { removeFromCart,resetCart } from '../../store/cartSlice';
 import Spacer from '../spacer/Spacer';
 
 
@@ -18,11 +18,23 @@ const CartTablo = () => {
     const removeItem = (id) => {
       dispatch(removeFromCart(id));
     }
+
+    const removeCart = () => {
+      dispatch(resetCart());
+    }
+    
+
+    const calculatedTotalPrice = () => {
+     let totalPrice = 0
+      for (const item of cart){
+        totalPrice += item.price
+      }
+      return totalPrice.toFixed(2)
+    }
     
 
   return (
     <Container className='d-flex flex-column align-items-end'>
-        <Spacer/>
         <span onClick={() => navigate(-1)} className="go-back mb-5">
                 <AiOutlineRollback /> Geri Dön
               </span>
@@ -37,19 +49,12 @@ const CartTablo = () => {
           </tr>
         </thead>
         <tbody>
-          
             {
                 cart.map((item,i)=>(
-            <tr key={item.id}>
+            <tr key={i}>
               <td>{i+1}</td>
               <td>{item.name}</td>
-              <td>{
-                    !item.size ? (
-                      "Beden Seçilmedi"
-                    )   : (
-                        item.size
-                    )
-                }
+              <td>{item.size}
               </td>
               <td>{item.price}</td>
               <td style={{cursor:"pointer"}} className="text-center">
@@ -61,10 +66,17 @@ const CartTablo = () => {
             </tr>
                 ))
             }
+
+            <tr>
+                <td colSpan={5} className='text-end'>
+                   Toplam Fiyat : {calculatedTotalPrice()} TL
+                </td>
+            </tr>
             
         </tbody>
         
       </Table>
+      <Button variant='danger' className='text-white text-center mt-3' disabled={cart.length === 0} onClick={removeCart} >Sepeti Temizle</Button>
       <Button className='text-white text-center mt-3' disabled={cart.length === 0} >Ödemeye Geç</Button>
     </Container>
   );

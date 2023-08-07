@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart,resetCart } from '../../store/cartSlice';
 import { setSize } from '../../store/sizeSlice';
 import Spacer from '../spacer/Spacer';
+import "./carttablo.scss"
 
 
 const CartTablo = () => {
@@ -45,17 +46,19 @@ const CartTablo = () => {
         <thead>
           <tr>
             <th>#</th>
+            <th>Ürün Resim</th>
             <th>Ürün Adı</th>
             <th>Beden</th>
             <th>Fiyat</th>
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='cart-table'>
             {
                 cart.map((item,i)=>(
             <tr key={i}>
               <td>{i+1}</td>
+              <td className='prod-image'><img src={item.image} className='img-fluid' alt="" /></td>
               <td>{item.name}</td>
               <td>{!item.size ? "beden secilmedi" : item.size}</td>
               <td>{item.price}</td>
@@ -70,7 +73,7 @@ const CartTablo = () => {
             }
 
             <tr>
-                <td colSpan={5} className='text-end'>
+                <td colSpan={6} className='text-end'>
                    Toplam Fiyat : {calculatedTotalPrice()} TL
                 </td>
             </tr>

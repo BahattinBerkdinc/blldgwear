@@ -9,6 +9,7 @@ import { setSize } from '../../store/sizeSlice';
 import { addToCart } from '../../store/cartSlice';
 import ModalBox from "../../components/modal/Modal";
 import './productdetail.scss';
+import SweetAlert from '../../helpers/sweetalert/SAlert';
 
 const ProductDetail = () => {
 
@@ -34,6 +35,7 @@ const ProductDetail = () => {
       const updatedProduct = { ...product, size: size };
       dispatch(addToCart(updatedProduct));
       dispatch(setSize(''));
+      SweetAlert("success", "Sepete Eklendi");
     }
     
    

@@ -11,6 +11,7 @@ const Layout = () => {
       <Spacer/>
       <Outlet/>
       <Spacer/>
+      <Spacer/>
       <Footer/>
     </div>
   )

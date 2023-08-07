@@ -13,7 +13,7 @@ const FeatureDetails = () => {
             <div className="fb-content">
             <img src={quarantee} alt="" />
             <div className="fb-text">
-            <h2>garanti & kolay degisim</h2>
+            <h2>garanti ve kolay değişim</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, nostrum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, iure eaque? Corporis ipsam iste consequuntur placeat sed nam, voluptas fuga nisi ad sint nostrum ducimus inventore quod soluta eaque possimus? </p>
             </div>
             </div>
@@ -25,7 +25,7 @@ const FeatureDetails = () => {
             <div className="fb-content">
             <img src={cargo} alt="" />
             <div className="fb-text">
-            <h2>hizli & guvenilir Kargo</h2>
+            <h2>hızlı ve güvenilir kargo</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, nostrum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, iure eaque? Corporis ipsam iste consequuntur placeat sed nam, voluptas fuga nisi ad sint nostrum ducimus inventore quod soluta eaque possimus? </p>
             </div>
             </div>
@@ -37,7 +37,7 @@ const FeatureDetails = () => {
             <div className="fb-content">
             <img src={services} alt="" />
             <div className="fb-text">
-            <h2>7/24 Musteri hizmetleri</h2>
+            <h2>7/24 müşteri hizmetleri</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, nostrum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur, iure eaque? Corporis ipsam iste consequuntur placeat sed nam, voluptas fuga nisi ad sint nostrum ducimus inventore quod soluta eaque possimus? </p>
             </div>
             </div>

@@ -1,0 +1,14 @@
+
+
+
+.prod-image{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+
+
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+}

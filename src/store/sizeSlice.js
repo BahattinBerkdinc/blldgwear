@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    size : ""
+    size : localStorage.getItem("size") || ""
 }
 
 
@@ -11,6 +11,7 @@ export const sizeSlice = createSlice({
     reducers : {
         setSize : (state, action) => {
             state.size = action.payload
+            localStorage.setItem("size", action.payload);
         }
     }
 })

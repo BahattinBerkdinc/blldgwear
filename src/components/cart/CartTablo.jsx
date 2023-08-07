@@ -1,13 +1,14 @@
 import React from 'react';
 import { Button, Container, Table } from 'react-bootstrap';
-import { AiFillDelete } from 'react-icons/ai';
-import { useParams } from 'react-router-dom';
+import { AiFillDelete, AiOutlineRollback } from 'react-icons/ai';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from '../../store/cartSlice';
+import Spacer from '../spacer/Spacer';
 
 
 const CartTablo = () => {
-
+    const navigate = useNavigate()
     const {cart} = useSelector((state) => state.cart);
     const {size} = useSelector((state) => state.size);
     const dispatch = useDispatch();
@@ -21,6 +22,10 @@ const CartTablo = () => {
 
   return (
     <Container className='d-flex flex-column align-items-end'>
+        <Spacer/>
+        <span onClick={() => navigate(-1)} className="go-back mb-5">
+                <AiOutlineRollback /> Geri Dön
+              </span>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -38,10 +43,17 @@ const CartTablo = () => {
             <tr key={item.id}>
               <td>{i+1}</td>
               <td>{item.name}</td>
-              <td>{size}</td>
+              <td>{
+                    !item.size ? (
+                      "Beden Seçilmedi"
+                    )   : (
+                        item.size
+                    )
+                }
+              </td>
               <td>{item.price}</td>
-              <td className="text-center">
-                <AiFillDelete
+              <td style={{cursor:"pointer"}} className="text-center">
+                <AiFillDelete className='text-danger'
                 onClick={()=>removeItem(item.id)}
                 />
             
@@ -53,7 +65,7 @@ const CartTablo = () => {
         </tbody>
         
       </Table>
-      <Button className='text-white text-center mt-3'>Ödemeye Geç</Button>
+      <Button className='text-white text-center mt-3' disabled={cart.length === 0} >Ödemeye Geç</Button>
     </Container>
   );
 };

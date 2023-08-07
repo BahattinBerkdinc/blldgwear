@@ -73,12 +73,14 @@
         letter-spacing: 1.4px;
     }
 
-    .go-back{
-        display: flex;
-        align-items: center;
-        gap: .7rem;
-        color: v.$color1;
-        font-size: .8rem;
-        cursor: pointer;
-    }
+   
+}
+
+.go-back{
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    color: v.$color1;
+    font-size: .8rem;
+    cursor: pointer;
 }

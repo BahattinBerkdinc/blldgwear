@@ -98,7 +98,7 @@ const ProductDetail = () => {
             > Sepete Ekle</Button>
             <Button
               className="text-white mt-5"
-              onClick={()=> navigate("/cart")}
+              onClick={()=> navigate("/cart/cartPage")}
             > Sepete Git</Button>
            </div>
            </>

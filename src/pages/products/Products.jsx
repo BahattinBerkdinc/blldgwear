@@ -3,7 +3,6 @@ import ProductCard from "../../components/product-card/ProductCard"
 import data from '../../data/data.json'
 import "./products.scss"
 import Spacer from "../../components/spacer/Spacer"
-import { Link } from "react-router-dom"
 
 
 const Products = () => {

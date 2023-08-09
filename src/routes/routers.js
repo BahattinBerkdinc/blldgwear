@@ -5,6 +5,7 @@ import Layout from "../layout/Layout";
 import Products from "../pages/products/Products";
 import CartPage from "../pages/cartPage/CartPage";
 import Payment from "../pages/payment/Payment";
+import ContactPage from "../pages/contactPage/ContactPage";
 
 
 const router = createBrowserRouter([
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
                 path: "cart",
                 children: [
                     {
-                        path: "cartPage",
+                        index:true,
                         element: <CartPage />
                     },
                     {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
                       }
                 ]
               },
+            {
+                path: "contact",
+                element: <ContactPage/>
+            }
               
             
         ]

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
-import "./payment.scss"
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import SweetAlert from '../../helpers/sweetalert/SAlert';
+import { useNavigate } from 'react-router-dom';
+import { resetCart } from '../../store/cartSlice';
+import {AiOutlineRollback} from 'react-icons/ai'
+import "./payment.scss"
 
 const Payment = () => {
   const [formData, setFormData] = useState({
@@ -9,14 +13,15 @@ const Payment = () => {
     lastName: '',
     address: '',
     email: '',
-    paymentMethod: 'kapida',
-    shippingMethod: 'aras', // Varsayılan olarak "Aras Kargo" seçeneği
+    paymentMethod: '',
+    shippingMethod: '', 
     accepted: false
   });
   const [submittedData, setSubmittedData] = useState(null);
 
   const {cart} = useSelector(state=>state.cart)
-  console.log(cart.length);
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -34,14 +39,55 @@ const Payment = () => {
   };
 
   const calculatedTotalPrice = () => {
-   
+    let totalPrice = 0
+    
+    for (const item of cart){
+      totalPrice += item.price
+    }
+    return totalPrice.toFixed(2) 
   }
+
+  const subtotal = calculatedTotalPrice()
+  console.log(subtotal);
+
+  const mainTotal = (price) => {
+    const kdvRate = 0.2;
+    const kdvAmount = parseFloat(price) * kdvRate;
+    const kargoFee = 50; 
+    const totalPrice = parseFloat(price) + kdvAmount + kargoFee;
+    return totalPrice.toFixed(2);
+  }
+
+  const total = mainTotal(subtotal)
+  console.log(total + "total");
+
+  const isFormValid = () => {
+    return (
+      formData.firstName !== '' &&
+      formData.lastName !== '' &&
+      formData.address !== '' &&
+      formData.email !== '' &&
+      formData.accepted
+    );
+  }
+
+  const handlePayment = () => {
+    SweetAlert("success", "Siparisiniz onaylandı!");
+    navigate("/")
+    dispatch(resetCart())
+
+    
+  }
+  
   
 
   return (
-    <Container className='d-flex justify-content-between gap-5'>
-      <Col sm={12} md={6}>
-        <p>Bilgilerinizi doldurunuz</p>
+    <Container className='payment'>
+      <div className="payment-left">
+      <span onClick={() => navigate(-1)} className="go-back mb-5">
+                <AiOutlineRollback /> Geri Dön
+              </span>
+        <p>Bilgilerinizi eksiksiz doldurunuz</p>
         <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>İsim</Form.Label>
@@ -93,7 +139,7 @@ const Payment = () => {
             <Form.Label>Ödeme Yöntemi</Form.Label>
             <Form.Check
               type="radio"
-              label="Kapıda Ödeme"
+              label="Kapıda Nakit Ödeme"
               name="paymentMethod"
               value="kapida"
               checked={formData.paymentMethod === 'kapida'}
@@ -101,7 +147,7 @@ const Payment = () => {
             />
             <Form.Check
               type="radio"
-              label="Kredi Kartı ile Ödeme"
+              label="Kapıda Kredi Kartı ile Ödeme"
               name="paymentMethod"
               value="krediKarti"
               checked={formData.paymentMethod === 'krediKarti'}
@@ -138,14 +184,18 @@ const Payment = () => {
               onChange={handleInputChange}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button 
+          className='text-white' 
+          variant="primary" 
+          type="submit"
+          disabled={!isFormValid()}
+          >
             Kaydet
           </Button>
         </Form>
-      </Col>
+      </div>
 
-      <Col sm={12} md={6}>
-        <div className="result-panel">
+      <div className="payment-right">
           <h2>Sipariş Bilgileri</h2>
           {submittedData && (
             <div>
@@ -159,10 +209,10 @@ const Payment = () => {
               <hr />
 
               <div className="paymentDetail">
-                <h2>SEPET</h2>
+                <h4>SEPET BİLGİLERİ</h4>
                 {
                     cart.map((item,i)=>(
-                        <ul style={{listStyle:"none", padding:"0", fontSize:".9rem"}} key={item.i}>
+                        <ul style={{listStyle:"none", padding:"0", fontSize:".9rem"}} key={i}>
                             <li>{item.name}</li>
                             <li>{item.price} TL</li>
                         </ul>                   
@@ -170,17 +220,22 @@ const Payment = () => {
                 }
                 <hr />
                 <div>
-                    <p>Toplam Tutar: {calculatedTotalPrice()} TL</p>
+                    <p>Tutar: {subtotal} TL</p>
+                    <p>KDV 20% </p>
+                    <p>Kargo : 50 TL</p>
+                    <p>Toplam Tutar: {total}  TL</p>
                 </div>
                 <hr />
-
+                <Button className='text-white'
+                onClick={handlePayment}
+                >Onayla</Button>
               </div>
 
 
             </div>
           )}
         </div>
-      </Col>
+    
     </Container>
   );
 };

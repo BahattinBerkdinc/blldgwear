@@ -1,1 +1,35 @@
 @use "../../styles/variables" as v;
+
+
+.payment{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 5rem;
+    @media (max-width:768px){
+        padding: 0 1rem;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .payment-left {
+        flex: 1;
+    }
+    .payment-right {
+        flex: 1;
+        background-color:rgba(211, 211, 211, 0.366);
+        min-height: 300px;
+        padding: 1rem;
+        border-radius: 15px;
+
+        h2{
+            font-weight: 200;
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
+        }
+
+    }
+
+    
+    
+}

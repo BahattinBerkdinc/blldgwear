@@ -82,7 +82,11 @@ const CartTablo = () => {
         
       </Table>
       <Button variant='danger' className='text-white text-center mt-3' disabled={cart.length === 0} onClick={removeCart} >Sepeti Temizle</Button>
-      <Button className='text-white text-center mt-3' disabled={cart.length === 0} >Ödemeye Geç</Button>
+      <Button 
+      className='text-white text-center mt-3' 
+      disabled={cart.length === 0} 
+      onClick={() => navigate('payment')}
+      >Ödemeye Geç</Button>
     </Container>
   );
 };

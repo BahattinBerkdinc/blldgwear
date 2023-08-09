@@ -1,18 +1,16 @@
 import React from 'react';
 import { Button, Container, Table } from 'react-bootstrap';
 import { AiFillDelete, AiOutlineRollback } from 'react-icons/ai';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart,resetCart } from '../../store/cartSlice';
 import { setSize } from '../../store/sizeSlice';
-import Spacer from '../spacer/Spacer';
 import "./carttablo.scss"
 
 
 const CartTablo = () => {
     const navigate = useNavigate()
     const {cart} = useSelector((state) => state.cart);
-    const {size} = useSelector((state) => state.size);
     const dispatch = useDispatch();
 
 

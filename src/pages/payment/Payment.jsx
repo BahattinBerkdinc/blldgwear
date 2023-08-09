@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Container, Form} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import SweetAlert from '../../helpers/sweetalert/SAlert';
 import { useNavigate } from 'react-router-dom';

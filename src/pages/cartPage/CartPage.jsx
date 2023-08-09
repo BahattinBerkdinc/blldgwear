@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Table } from 'react-bootstrap' 
+import { Container } from 'react-bootstrap' 
 import CartTablo from '../../components/cart/CartTablo'
 
 const CartPage = () => {

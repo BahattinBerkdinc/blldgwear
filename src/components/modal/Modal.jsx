@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import "./modal.scss"
 import { Button, Modal } from 'react-bootstrap'
 

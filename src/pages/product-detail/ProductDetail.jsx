@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import data from '../../data/data.json';
-import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import Spacer from '../../components/spacer/Spacer';
 import { AiOutlineRollback, AiOutlineStar } from 'react-icons/ai';
 import { useSelector, useDispatch } from 'react-redux';
@@ -18,7 +18,7 @@ const ProductDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const product = data.products.find((item) => item.id == id);
+  const product = data.products.find((item) => item.id === Number(id));
 
   const {size} = useSelector((state) => state.size);
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const ProductDetail = () => {
   }
   
   const handleAddToCart = () => {
-    if(size==""){
+    if(size===""){
       setShowModal(true);
     }else{
       const updatedProduct = { ...product, size: size };

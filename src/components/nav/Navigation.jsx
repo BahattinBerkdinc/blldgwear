@@ -15,7 +15,7 @@ const Navigation = () => {
           <Nav.Link href='/#aboutUs' eventKey="link-2">Blldg</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-3">Bize Ulaşın</Nav.Link>
+          <Nav.Link href='/contact' eventKey="link-3">Bize Ulaşın</Nav.Link>
         </Nav.Item>
       </Nav>
   )
